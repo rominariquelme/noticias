@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {{parent()}}
+  <script type="text/javascript" src="./js/usuarios.js"></script>
+{% endblock %}
+
+
+{% block contenido %}
+<div id='title'>Login</div>
+<div id="login">
+    <form method="post" action="./index.php?seccion=login&amp;login=ok">
+    	<input id="nick" type="text" name="nick" placeholder="NICK">
+    	<input id="pass" type="password" name="pass" placeholder="PASS"></textarea>
+    	<input id="login" name="submit" type="submit" value="Login">
+	</form>
+</div>
+    
+{% endblock %}

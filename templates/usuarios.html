@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block head %}
+	{{parent()}}
+	<link rel="stylesheet" href="css/usuarios.css">
+	<script type="text/javascript" src="./js/usuarios.js"></script>
+{% endblock %}
+
+{% block contenido %}
+		<div id='title'>Sección usuarios</div>
+
+		<div id="agregar_usuario" class='button'>
+			Agregar Usuario
+		</div>
+
+		<div id="agregar" class="hide">
+		    <form method="post" action="./index.php?seccion=usuarios&amp;agregar=ok">
+		    	<input id="nick" type="text" name="nick" placeholder="NICK">
+		    	<input id="email" type="text" name="email" placeholder="usuario@dominio.com">
+		    	<input id="pass" type="password" name="pass" placeholder="PASS"></textarea>
+		    	<input id="agregar" name="submit" type="submit" value="AGREGAR">
+	    	</form>
+    	</div>
+
+		{% if users %}
+			<table>
+				<tr>
+					<th>Nick</th>
+					<th>E-mail</th>
+					<th>Pass</th>
+				</tr>
+					{% for user in users %}
+						<tr>
+							<td>user.nick</td>
+							<td>user.email</td>
+							<td>user.pass</td>
+							<a href="./index.php?seccion=usuarios&amp;eliminar='user.id'">Eliminar</a>
+						</tr>
+					{% endfor %}
+			</table>
+		{% endif %}
+
+{% endblock %}

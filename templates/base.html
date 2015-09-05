@@ -1,0 +1,24 @@
+<html>
+	<head>
+		{% block head %}
+        	<meta charset="utf-8">
+        	<link rel="stylesheet" href="css/base.css">
+        	<script type="text/javascript" src="./vendor/jquery/jquery-2.1.4.min.js"></script>
+		{% endblock %}    
+    </head>
+
+    <body>
+	    <div id="banner"></div>
+	    <div id="menu">
+			<a href="./index.php">INICIO</a>
+			<a href="./index.php?seccion=login">LOGIN</a>
+			<a href="./index.php?seccion=noticias">NOTICIAS</a>
+			<a href="./index.php?seccion=enviar">ENVIAR NOTICIAS</a>
+			<a href="./index.php?seccion=usuarios">USUARIOS</a>
+		</div>
+		{% block contenido %}
+		<!-- el bloque contenido de cada pagina...-->
+		estoy en base
+		{% endblock %}
+	</body>
+</html>
